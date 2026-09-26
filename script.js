@@ -1,6 +1,8 @@
 const dropBox = document.getElementById("dropBox");
 const fileInput = document.getElementById("fileInput");
 const convBtn = document.getElementById("convBtn");
+const closeAdBtn = document.getElementById("closeAdBtn");
+const modalBox = document.getElementById("modalBox");
 const chosenText = document.getElementById("chosenText");
 let userChosenFormat = "webp";
 let selectedFile = null;
@@ -40,7 +42,16 @@ fileInput.addEventListener("change", e => {
         chosenText.innerText = selectedFile.name;
         chosenText.classList.add("block", "px-2");
     }
-});
+});//close modal function 
+
+if (closeAdBtn && modalBox) {
+    closeAdBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        modalBox.classList.add("hidden");
+        modalBox.classList.remove("flex");
+    });
+}
 
 // To activate Custom name
 relative4.addEventListener("click", () => {
