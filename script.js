@@ -90,6 +90,11 @@ convBtn.addEventListener("click", () => {
             ctx.drawImage(img, 0, 0);
             console.log(
                 "Basic Setup has been finished. Download will soon begin. "
+
+            );
+
+            window.alert(
+                "Basic Setup has been finished. Download will soon begin. "
             );
             // conversion logic.
             // This takes user input and convert
@@ -121,10 +126,12 @@ convBtn.addEventListener("click", () => {
                 );
 
                 const link = document.createElement("a");
-                console.log("Downloading process has begun");
-                const userCustomName =
+                 const userCustomName =
                     customName.value.trim() || `Quick-Convert-${Date.now()}`;
                 link.download = `${userCustomName}.${userChosenFormat}`;
+                console.log("Downloading process has begun");
+                window.alert(`Downloading ${userCustomName}.${userChosenFormat} ...`);
+               
                 link.href = dataUrl;
                 link.click();
                 canvas = null;
